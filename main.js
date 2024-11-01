@@ -3,12 +3,11 @@ function convertTemperature() {
     let temperature = parseFloat(document.getElementById("temperature").value);
     let decimalPlaces = document.querySelector('input[name="decimal"]:checked').value;
     let result;
-
     
     if ((temperature) < -273.15) {
         document.getElementById("result").innerText = "Syötä kelvollinen lämpötila.";
         return;
-    } else if (isNaN(temperature)) {
+    }else if (isNaN(temperature)) {
         document.getElementById("result").innerText = "Syötä kelvollinen lämpötila.";
         return;
     }
@@ -16,10 +15,8 @@ function convertTemperature() {
     
     if (conversionType === "c_to_f") {
         result = (temperature *1.8) + 32;
-        
     } else if (conversionType === "f_to_c") {
         result = (temperature - 32) /1.8;
-      
     }
     
     document.getElementById("result").innerText = `Tuloksena: ${result.toFixed(decimalPlaces)}°`;
