@@ -1,12 +1,26 @@
-lampotila_c = 0
-lampotila_f = 0
-function lampotilaconverter() {
-    c = document.getElementById("lampotila");
-    f = c*1.8+32;
-    document.log(f);
-}
-
-
-if (lampotila_c < -273,15) { 
-    return Text("liia kylmä")
+function convertTemperature() {
+    let conversionType = document.getElementById("conversion").value;
+    let temperature = parseFloat(document.getElementById("temperature").value);
+    let decimalPlaces = document.querySelector('input[name="decimal"]:checked').value;
+    let result;
+    let tempchecker;
+    
+    if ((temperature) < -273.15) {
+        document.getElementById("result").innerText = "Syötä kelvollinen lämpötila.";
+        return;
+    } else if (isNaN(temperature)) {
+        document.getElementById("result").innerText = "Syötä kelvollinen lämpötila.";
+        return;
+    }
+    
+    
+    if (conversionType === "c_to_f") {
+        result = (temperature *1.8) + 32;
+        tempchecker = fahr
+    } else if (conversionType === "f_to_c") {
+        result = (temperature - 32) /1.8;
+        tempchecker = celc
+    }
+    
+    document.getElementById("result").innerText = `Tuloksena: ${result.toFixed(decimalPlaces)}°`;
 }

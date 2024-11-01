@@ -3,15 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lämpötila muunnin</title>
+    <title>Document</title>
 </head>
 <body>
     <h1>Lämpötilamuunnin</h1>
-    <div class="dropdown">
-        <form>
-            <input id="lampotila" >
-            <button onclick="event.preventDefault(); lampotilaconverter();">Muuta</button>
-        </form>
-    </div>
-    </body>
+    
+    <label for="conversion">Valitse muunnos:</label>
+    <select id="conversion">
+        <option value="c_to_f">Celsius -> Fahrenheit</option>
+        <option value="f_to_c">Fahrenheit -> Celsius</option>
+    </select>
+    
+    <br><br>
+    
+    <label for="temperature">Syötä lämpötila:</label>
+    <input type="number" id="temperature" placeholder="Anna lämpötila">
+    <button onclick="convertTemperature()">Muunna</button>
+    
+    <br><br>
+    
+    <label>Desimaaleja:</label><br>
+    <input type="radio" id="decimal1" name="decimal" value="1" checked>
+    <label for="decimal1">1 desimaali</label><br>
+    <input type="radio" id="decimal2" name="decimal" value="2">
+    <label for="decimal2">2 desimaalia</label><br>
+    <input type="radio" id="decimal3" name="decimal" value="3">
+    <label for="decimal3">3 desimaalia</label><br>
+    
+    <br>
+    <p id="result"></p>
+    <script src="main.js"> </script>
+</body>
 </html>
